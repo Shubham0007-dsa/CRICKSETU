@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7f5;
+  color: #17251c;
+}
+
+.navbar {
+  height: 70px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #17251c;
+}
+
+.logo span {
+  color: #159447;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: #455149;
+}
+
+.nav-links button:hover {
+  color: #159447;
+}
+
+.hero {
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 60px 10%;
+  gap: 60px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.tagline {
+  color: #159447;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: 65px;
+  line-height: 1.05;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #159447;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #66716a;
+  max-width: 560px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.primary-btn {
+  background: #159447;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 15px 24px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #117b3c;
+}
+
+.secondary-btn {
+  background: white;
+  color: #17251c;
+
+  border: 1px solid #d5ddd7;
+  border-radius: 10px;
+
+  padding: 15px 24px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  border-color: #159447;
+  color: #159447;
+}
+
+.hero-card {
+  width: 350px;
+  height: 400px;
+
+  background: #17251c;
+  color: white;
+
+  border-radius: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.cricket-icon {
+  font-size: 90px;
+  margin-bottom: 25px;
+}
+
+.hero-card h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.hero-card p {
+  color: #b8c2bb;
+  font-size: 16px;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 35px;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats strong {
+  font-size: 25px;
+  color: white;
+}
+
+.stats small {
+  color: #aeb8b1;
+  margin-top: 5px;
+}
+
+@media (max-width: 800px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 6%;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
