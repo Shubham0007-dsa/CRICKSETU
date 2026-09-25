@@ -1,107 +1,129 @@
 import "./App.css";
 
+const players = [
+  {
+    id: 1,
+    name: "Rahul Sharma",
+    role: "All-Rounder",
+    level: "Intermediate",
+    distance: "1.2 km",
+    batting: "Right Hand",
+    bowling: "Right Arm Medium",
+  },
+  {
+    id: 2,
+    name: "Aman Verma",
+    role: "Fast Bowler",
+    level: "Advanced",
+    distance: "1.8 km",
+    batting: "Right Hand",
+    bowling: "Right Arm Fast",
+  },
+  {
+    id: 3,
+    name: "Arjun Singh",
+    role: "Batsman",
+    level: "Intermediate",
+    distance: "2.1 km",
+    batting: "Left Hand",
+    bowling: "Right Arm Spin",
+  },
+  {
+    id: 4,
+    name: "Rohit Kumar",
+    role: "Wicket Keeper",
+    level: "Beginner",
+    distance: "2.7 km",
+    batting: "Right Hand",
+    bowling: "—",
+  },
+];
+
 function App() {
   return (
     <div>
-
       {/* NAVBAR */}
 
       <nav className="navbar">
-
         <div className="logo">
           🏏 Crick<span>Setu</span>
         </div>
 
         <div className="nav-links">
-
           <button>Home</button>
-
           <button>Nearby Players</button>
-
           <button>Create Match</button>
-
           <button>Profile</button>
-
         </div>
-
       </nav>
 
+      {/* NEARBY PLAYERS */}
 
-      {/* HERO SECTION */}
+      <main className="players-page">
+        <div className="players-header">
+          <div>
+            <p className="tagline">CRICKET COMMUNITY</p>
 
-      <section className="hero">
+            <h1>
+              Players <span>Near You</span>
+            </h1>
 
-        <div className="hero-content">
-
-          <div className="tagline">
-            YOUR LOCAL CRICKET COMMUNITY
+            <p className="players-description">
+              Find cricket players around your area and build your team.
+            </p>
           </div>
 
-          <h1>
-            Find Players.
-            <br />
-            <span>Build Your Team.</span>
-          </h1>
-
-          <p>
-            CrickSetu helps you discover cricket players
-            near you, create matches and build your team
-            in minutes.
-          </p>
-
-
-          <div className="buttons">
-
-            <button className="primary-btn">
-              Find Players →
-            </button>
-
-            <button className="secondary-btn">
-              Create Match
-            </button>
-
-          </div>
-
+          <button className="location-btn">
+            📍 Your Location
+          </button>
         </div>
 
+        {/* PLAYER CARDS */}
 
-        {/* RIGHT CARD */}
+        <div className="players-grid">
+          {players.map((player) => (
+            <div className="player-card" key={player.id}>
+              
+              <div className="player-top">
+                <div className="player-avatar">
+                  {player.name.charAt(0)}
+                </div>
 
-        <div className="hero-card">
+                <div>
+                  <h2>{player.name}</h2>
+                  <p>{player.role}</p>
+                </div>
+              </div>
 
-          <div className="cricket-icon">
-            🏏
-          </div>
+              <div className="player-info">
+                <div>
+                  <span>Level</span>
+                  <strong>{player.level}</strong>
+                </div>
 
-          <h2>
-            Cricket Starts Here
-          </h2>
+                <div>
+                  <span>Distance</span>
+                  <strong>📍 {player.distance}</strong>
+                </div>
+              </div>
 
-          <p>
-            No team?
-            <br />
-            No problem.
-          </p>
+              <div className="player-skills">
+                <p>
+                  🏏 {player.batting}
+                </p>
 
+                <p>
+                  ⚡ {player.bowling}
+                </p>
+              </div>
 
-          <div className="stats">
-
-            <div>
-              <strong>50+</strong>
-              <small>Players</small>
+              <button className="invite-btn">
+                Invite to Team
+              </button>
             </div>
-
-            <div>
-              <strong>10+</strong>
-              <small>Matches</small>
-            </div>
-
-          </div>
-
+          ))}
         </div>
-
-      </section>
-
+      </main>
     </div>
   );
 }
